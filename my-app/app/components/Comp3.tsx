@@ -14,7 +14,6 @@ export default function(){
     fetchData();
   },[]);
   return <div>
-        <h2 className="text-lg font-semibold">Comp 3</h2>
         <br />
         <p>Count is: {data}</p>
     </div>

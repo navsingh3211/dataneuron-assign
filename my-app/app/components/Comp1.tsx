@@ -18,7 +18,7 @@ export default function(){
   }
 
   return <div className={"grow bg-darker contents"}>
-        <h2 className="text-lg font-semibold">Com1</h2>
+        <h2 className="text-lg font-semibold">Enter data:</h2>
         <input className={"bg-black"} type="text" placeholder="enter data" onChange={(e)=>setData(e.target.value)}/>
         <button onClick={onSubmitHandler} className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">submit</button>
   </div>

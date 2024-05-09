@@ -6,8 +6,23 @@ import Comp2 from "../components/Comp2";
 import Comp3 from "../components/Comp3";
 import { useResizable } from "react-resizable-layout";
 import SampleSplitter from "../components/Codespliter";
+import { useState,useEffect } from "react";
+import axios from 'axios';
 
 export default function(){
+  let [userdata,setUserdata] = useState("");
+  let [id,setId] = useState("");
+  useEffect(()=>{
+    fetchData();
+  },[]);
+  const fetchData = async()=>{
+    const datafinal = await axios.get("http://localhost:3000/api/todo/get-todo");
+    if(datafinal.data.data.length>0){
+      setUserdata(datafinal.data.data[0].name);
+      setId(datafinal.data.data[0]._id);
+      // console.log(datafinal.data.data[0])
+    }
+  }
   const {
     isDragging: isTerminalDragging,
     position: terminalH,
@@ -56,7 +71,7 @@ export default function(){
             className="shrink-0 contents"
             style={{ width: pluginW }}
           >
-            <Comp2/>
+            <Comp2 userdata={userdata} userId={id}/>
           </div>
         </div>
       </div>
