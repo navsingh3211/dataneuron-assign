@@ -1,10 +1,11 @@
 import mongoose from 'mongoose';
 
-const mongoUrl = 'mongodb://127.0.0.1:27017/dataneuron';
+// const mongoUrl = 'mongodb://127.0.0.1:27017/dataneuron';
+const mongoUrl = process.env.NEXT_PUBLIC_MONGO_URL;
 
 const database = async () => {
   try {
-    const conn = await mongoose.connect(mongoUrl);
+    const conn = await mongoose.connect(`${mongoUrl}`);
 
     console.log(`🔗🔗🔗🔗 MongoDB Connected: ${conn.connection.host} 🔗🔗🔗🔗`);
     console.log('Connection to the database is successful✅.');

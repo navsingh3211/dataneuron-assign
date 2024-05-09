@@ -2,7 +2,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { useEffect,useState } from "react";
 import axios from 'axios';
-import { log } from "console";
 
 export default function(){
   const [data,setData] = useState(0);

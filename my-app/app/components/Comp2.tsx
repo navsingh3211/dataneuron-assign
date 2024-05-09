@@ -21,12 +21,14 @@ export default function(){
   const handleSubmitPopup = (value:any) => {
     handleClosePopup();
   };
+  console.log(data,'datadata');
+  
   useEffect(()=>{
     const fetchData = async()=>{
       const datafinal = await axios.get("http://localhost:3000/api/todo/get-todo");
       if(datafinal.data.data.length>0){
         setData(datafinal.data.data[0].name);
-        setId(datafinal.data.data[0]._id)
+        setId(datafinal.data.data[0]._id);
         // console.log(datafinal.data.data[0])
       }
     }
