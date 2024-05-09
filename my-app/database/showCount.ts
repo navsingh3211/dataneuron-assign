@@ -6,7 +6,7 @@ const _schema = new Schema(
     count: {
       type: Number,
       index: true,
-      select: false
+      default:0
     }
   },
   {

@@ -6,7 +6,7 @@ const _schema = new Schema(
     name: {
       type: String,
       index: true,
-      select: false
+      required:true
     },
     status: {
       type: Boolean,
